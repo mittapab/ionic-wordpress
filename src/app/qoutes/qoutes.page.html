@@ -9,10 +9,11 @@
    <ion-row>
      <ion-col size='12'>
        <ion-list *ngIf="qoutes.length > 0 ">
-         <ion-item detail *ngFor="let qoute of qoutes">
+         <ion-item detail *ngFor="let qoute of qoutes"routerLink="/qoutes/{{qoute.id}}">
            <ion-label text-wrap>
              <ion-item lines="none">
-                <h2>{{qoute.title.rendered}}</h2>
+              <ion-img [src]="qoute.imageq.guid" width="40" height="80"></ion-img>
+              
              </ion-item>
              <ion-item lines="none">
               <p>~ {{qoute.writer}} </p>
@@ -25,6 +26,7 @@
         <ion-item detail *ngFor="let item of [].constructor(10)">
           <ion-label text-wrap>
             <ion-item lines="none">
+              
               <ion-skeleton-text width='100%'></ion-skeleton-text>
               <ion-skeleton-text width='80%'></ion-skeleton-text>
             </ion-item>

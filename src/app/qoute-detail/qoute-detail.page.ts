@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-qoute-detail',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qoute-detail.page.scss'],
 })
 export class QouteDetailPage implements OnInit {
-
-  constructor() { }
+  qouteid:any;
+  constructor(private activateRoute: ActivatedRoute , private dataService:DataService) { }
 
   ngOnInit() {
+
+    const id = this.activateRoute.snapshot.paramMap.get('id');
+    this.dataService.getData(`qoutes/${id}`).subscribe(data => {
+       this.qouteid = data
+       console.log(this.qouteid)
+    })
+    
   }
 
 }

@@ -4,12 +4,16 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'qoutes',
+    path: '',
     component: TabsPage,
     children: [
       {
         path: 'qoutes',
         loadChildren: () => import('../qoutes/qoutes.module').then(m => m.QoutesPageModule)
+      },
+      {
+        path: 'qoutes/:id',
+        loadChildren: () => import('../qoute-detail/qoute-detail.module').then(m => m.QouteDetailPageModule)
       },
       {
         path: 'about',
