@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-qoutes',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qoutes.page.scss'],
 })
 export class QoutesPage implements OnInit {
+  
+  qoutes:any = []
 
-  constructor() { }
+  constructor(private dataService: DataService) {
 
-  ngOnInit() {
-  }
+    this.dataService.getData('qoutes').subscribe( data => { 
+      console.log(data) 
+      setTimeout(()=> { this.qoutes = data} , 2000)
+       });
+   
+}
+  
+  
+  ngOnInit() {}
+
 
 }
