@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false ,
-  apiUrl: 'http://127.0.0.1/new_wp/wp-json/wp/v2'
+  apiUrl: 'http://127.0.0.1/new_wp/wp-json/wp/v2',
+  apiUrlAuth: 'http://127.0.0.1/new_wp/wp-json/jwt-auth/v1/token'
 };
 
 /*

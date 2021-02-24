@@ -23,7 +23,7 @@
       </ion-col>
    </ion-row>
    <ion-row>
-    <ion-col size='12'>
+    <ion-col size='12'  *ngIf="(auth.isAuth | async)">
       <ion-button expand="full" color="warning">Edit</ion-button>
       <ion-button expand="full" color="danger">Delete</ion-button>
     </ion-col>

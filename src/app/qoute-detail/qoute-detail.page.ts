@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { DataService } from '../data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class QouteDetailPage implements OnInit {
   qouteid:any;
-  constructor(private activateRoute: ActivatedRoute , private dataService:DataService) { }
+  constructor(private activateRoute: ActivatedRoute , private dataService:DataService , public auth: AuthService) { }
 
   ngOnInit() {
 
